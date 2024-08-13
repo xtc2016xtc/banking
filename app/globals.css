@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+@layer components{
+  .text-xtc{
+    @apply font-bold text-2xl;
+  }
+}
