@@ -1,0 +1,19 @@
+### 该问题是怎么引起的？
+
+
+### 重现步骤
+
+
+
+### 报错信息
+
+<details><summary><code>报错信息</code></summary>
+
+```typescript jsx
+const appwrit = resizeTo("")
+console.log(appwrit)
+
+
+```
+
+</details>
