@@ -1,8 +1,8 @@
 /* eslint-disable no-prototype-builtins */
-import { type ClassValue, clsx } from "clsx";
+import {type ClassValue, clsx} from "clsx";
 import qs from "query-string";
-import { twMerge } from "tailwind-merge";
-import { z } from "zod";
+import {twMerge} from "tailwind-merge";
+import {z} from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -175,9 +175,7 @@ export function extractCustomerIdFromUrl(url: string) {
   const parts = url.split("/");
 
   // Extract the last part, which represents the customer ID
-  const customerId = parts[parts.length - 1];
-
-  return customerId;
+  return parts[parts.length - 1];
 }
 
 export function encryptId(id: string) {
