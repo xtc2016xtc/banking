@@ -1,4 +1,4 @@
-import {Button} from "@/components/ui/button";
+
 import HeaderBox from "@/components/Header/HeaderBox";
 
 const Home = () => {
