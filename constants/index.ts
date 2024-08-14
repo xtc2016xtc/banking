@@ -1,23 +1,25 @@
+import {BanksIcon, HomeIcon, moneyIcon, transactionIcon} from "@/utils";
+
 export const sidebarLinks = [
   {
-    imgURL: "/icons/home.svg",
+    imgURL: HomeIcon,
     route: "/",
-    label: "Home",
+    label: "首页",
   },
   {
-    imgURL: "/icons/dollar-circle.svg",
+    imgURL: BanksIcon,
     route: "/my-banks",
-    label: "My Banks",
+    label: "我的银行",
   },
   {
-    imgURL: "/icons/transaction.svg",
+    imgURL: transactionIcon,
     route: "/transaction-history",
-    label: "Transaction History",
+    label: "交易历史",
   },
   {
-    imgURL: "/icons/money-send.svg",
+    imgURL: moneyIcon,
     route: "/payment-transfer",
-    label: "Transfer Funds",
+    label: "转账",
   },
 ];
 
