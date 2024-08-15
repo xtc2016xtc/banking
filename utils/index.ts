@@ -7,7 +7,10 @@
 * logo svg
 * */
 export const logoIcon = '/icons/logo.svg'
-
+export const plugin = '/icons/plus.svg'
+export const PayIcon = '/icons/Paypass.svg'
+export const RepayIcon = '/icons/mastercard.svg'
+export const linesIcon = '/icons/lines.png'
 /*
 * SidebarIcon
 * */
