@@ -1,35 +1,32 @@
-"use client"
+'use client'
 
-import Link from "next/link";
-import Image from "next/image";
-import { logoIcon } from "@/utils";
-import { sidebarLinks } from "@/constants";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { sidebarLinks } from '@/constants'
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import {logoIcon} from "@/utils";
 
 const Sidebar = ({ user }: SiderbarProps) => {
     const pathname = usePathname();
-    console.log(user)
+
     return (
         <section className="sidebar">
             <nav className="flex flex-col gap-4">
-                <Link href="/" className="mb-12 cursor-pointer gap-2">
+                <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2">
                     <Image
-                        alt="logo"
+                        src={logoIcon}
                         width={34}
                         height={34}
-                        src={logoIcon}
+                        alt="Horizon logo"
                         className="size-[24px] max-xl:size-14"
                     />
-                    <h1 className="sidebar-logo">
-                        Horizon
-                    </h1>
+                    <h1 className="sidebar-logo">Horizon</h1>
                 </Link>
 
-
-                {/* 遍历 sidebarLinks 数组 */}
                 {sidebarLinks.map((item) => {
-                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
+                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
+
                     return (
                         <Link href={item.route} key={item.label}
                               className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
@@ -48,11 +45,11 @@ const Sidebar = ({ user }: SiderbarProps) => {
                                 {item.label}
                             </p>
                         </Link>
-                    );
+                    )
                 })}
             </nav>
         </section>
-    );
-};
+    )
+}
 
-export default Sidebar;
+export default Sidebar

@@ -1,6 +1,7 @@
 import Sidebar from "@/components/left/Sidebar";
 import {logoIcon} from "@/utils";
 import Image from "next/image";
+import MobileNav from "@/components/Header/MobileNav";
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
@@ -19,14 +20,16 @@ export default function RootLayout({
                         src={logoIcon}
                         width={30}
                         height={30}
-                        alt="menu icon"
+                        alt="logo"
                     />
+                    <div>
+                        {/*@ts-ignore*/}
+                        <MobileNav user={loggedIn} />
+                    </div>
                 </div>
+                {children}
             </div>
-            {children}
         </main>
     );
 }
-
-
 
