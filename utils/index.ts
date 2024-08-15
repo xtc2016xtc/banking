@@ -33,8 +33,3 @@ export const hamburgerIcon = '/icons/hamburger.svg'
 /*
 * 公共样式
 * */
-export const desiderata = {
-        nav:"flex flex-col gap-4",
-        Stylelink:"mb-12 cursor-pointer gap-2",
-        logostyle:"size-[24px] max-xl:size-14"
-    }
