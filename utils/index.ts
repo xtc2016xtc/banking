@@ -24,8 +24,10 @@ export const transactionIcon = '/icons/transaction.svg'
 export const moneyIcon = '/icons/money-send.svg'
 
 
-
-
+/*
+* MobileNav logo
+* */
+export const hamburgerIcon = '/icons/hamburger.svg'
 
 
 /*
