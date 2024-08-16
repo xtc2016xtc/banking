@@ -5,7 +5,6 @@ import {formatAmount} from "@/lib/utils";
 
 // 定义一个 BankCard 组件，用于显示银行卡信息
 const BankCard = ({ account, userName, showBalance = true }:CreditCardProps)=> {
-    {showBalance?.valueOf()}
     return (
         <div className="flex flex-col">
             {/* 使用 Link 组件包裹银行卡信息，点击可以跳转到首页 */}

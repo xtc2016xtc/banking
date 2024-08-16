@@ -3,7 +3,6 @@ import Image from "next/image"
 import {plugin} from "@/utils";
 import BankCard from "@/components/Card/BankCard";
 const RightSidebar = ({user,banks,transactions}:RightSidebarProps) => {
-    console.log(transactions)
     return (
        <aside className="right-sidebar">
            <section className="flex flex-col pb-8">

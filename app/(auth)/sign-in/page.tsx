@@ -1,9 +1,10 @@
+import AuthForm from "@/components/Form/AuthForm";
 
-const SignIn = async () => {
+const SignIn =  () => {
     return (
-        <div>
-            Sign in
-        </div>
+        <section className="flex-center size-full max-sm:px-6">
+           <AuthForm type="sign-in" />
+        </section>
     )
 }
 
