@@ -2,6 +2,7 @@
 import HeaderBox from "@/components/Header/HeaderBox";
 import TotalBalanceBox from "@/components/TotalBalanceBox/TotalBalanceBox";
 import RightSidebar from "@/components/right/RightSidebar";
+import {getLoggedInUser} from "@/lib/actions/user.actions";
 // 问候
 function getGreetingBasedOnTime(): string {
     const now = new Date();
@@ -18,9 +19,9 @@ function getGreetingBasedOnTime(): string {
     }
 }
 
-const Home = () => {
+const Home = async () => {
 
-    const loggedIn = {firstName:'熊',lastName: '先生',email:'728611827@qq.com'}
+    const loggedIn = await getLoggedInUser();
     const title = getGreetingBasedOnTime();
 
 
@@ -32,7 +33,7 @@ const Home = () => {
                     <HeaderBox
                         type="greeting"
                         title={title}
-                        user={loggedIn?.firstName || 'Guest'}
+                        user={loggedIn?.name || '名字获取错误'}
                         subtext="银行交易平台"
                     />
 
@@ -45,8 +46,11 @@ const Home = () => {
 
                 RECENT TRANSACTIONS
             </div>
-            {/*@ts-ignore*/}
-            <RightSidebar user={loggedIn} transactions={[]} banks={[{currentBalance:154},{currentBalance:500}]}
+
+            <RightSidebar
+                user={loggedIn}
+                transactions={[]}
+                banks={[]}
             />
         </section>
     )

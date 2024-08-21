@@ -42,18 +42,16 @@ const AuthForm = ({ type }: { type: string }) => {
             if(type === 'sign-up') {
                 const newUser = await signUp(data)
                 setUser(newUser)
-                router.push('/')
+                router.push('/sign-in')
             }
 
             if(type === 'sign-in') {
-                const res = await signIn()
-                console.log(res)
-                // const response = await signIn({
-                //     email: data.email,
-                //     password: data.password,
-                // })
-                //
-                // if(response) router.push('/')
+                const response = await signIn({
+                    email: data.email,
+                    password: data.password,
+                })
+
+                if(response) router.push('/')
             }
         } catch (error) {
             console.log(error);
@@ -78,14 +76,14 @@ const AuthForm = ({ type }: { type: string }) => {
                 <div className="flex flex-col gap-1 md:gap-3">
                     <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
                         {user
-                            ? 'Link Account'
+                            ? '链接账户'
                             : type === 'sign-in'
                                 ? '登录'
                                 : '注册'
                         }
                         <p className="text-16 font-normal text-gray-600">
                             {user
-                                ? 'Link your account to get started'
+                                ? '正在链接'
                                 : '请输入您的详细信息以便更好的服务'
                             }
                         </p>
