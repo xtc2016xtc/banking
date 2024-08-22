@@ -1,6 +1,6 @@
 "use server";
 
-import {Client} from "dwolla-v2";
+import { Client } from "dwolla-v2";
 
 const getEnvironment = (): "production" | "sandbox" => {
     const environment = process.env.DWOLLA_ENV as string;
@@ -44,9 +44,10 @@ export const createOnDemandAuthorization = async () => {
         const onDemandAuthorization = await dwollaClient.post(
             "on-demand-authorizations"
         );
-        return onDemandAuthorization.body._links;
+        const authLink = onDemandAuthorization.body._links;
+        return authLink;
     } catch (err) {
-        console.error("Creating an On Demand Authorization Failed: ", err);
+        console.error("没有权限,详细信息: ", err);
     }
 };
 
@@ -58,7 +59,7 @@ export const createDwollaCustomer = async (
             .post("customers", newCustomer)
             .then((res) => res.headers.get("location"));
     } catch (err) {
-        console.error("Creating a Dwolla Customer Failed: ", err);
+        console.error("错误是: ", err);
     }
 };
 
