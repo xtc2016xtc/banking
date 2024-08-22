@@ -32,6 +32,7 @@ export const moneyIcon = '/icons/money-send.svg'
 * */
 export const hamburgerIcon = '/icons/hamburger.svg'
 
+export const logoutIcon = '/icons/logout.svg'
 
 /*
 * 公共样式

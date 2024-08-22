@@ -4,7 +4,7 @@ import {linesIcon, PayIcon, RepayIcon} from "@/utils";
 import {formatAmount} from "@/lib/utils";
 
 // 定义一个 BankCard 组件，用于显示银行卡信息
-const BankCard = ({ account, userName, showBalance = true }:CreditCardProps)=> {
+const BankCard = ({ account, userName }:CreditCardProps)=> {
     return (
         <div className="flex flex-col">
             {/* 使用 Link 组件包裹银行卡信息，点击可以跳转到首页 */}
@@ -13,7 +13,7 @@ const BankCard = ({ account, userName, showBalance = true }:CreditCardProps)=> {
                     <div>
                         {/* 显示账户名称或用户名 */}
                         <h1 className="text-16 font-semibold text-white">
-                            {account.name || userName}
+                            {userName}
                         </h1>
                         {/* 显示当前余额 */}
                         <p className="font-ibm-plex-serif font-black text-white">

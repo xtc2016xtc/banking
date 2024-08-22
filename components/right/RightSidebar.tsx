@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import {plugin} from "@/utils";
 import BankCard from "@/components/Card/BankCard";
-const RightSidebar = ({user,banks,transactions }:RightSidebarProps) => {
+const RightSidebar = ({user,banks }:RightSidebarProps) => {
     if(!user){
         return null
     }
@@ -47,7 +47,7 @@ const RightSidebar = ({user,banks,transactions }:RightSidebarProps) => {
                             <BankCard
                                 key={banks[0].$id}
                                 account={banks[0]}
-                                userName={`${user.firstName} ${user.lastName}`}
+                                userName={user.name}
                                 showBalance={false}
                             />
                         </div>
@@ -56,7 +56,7 @@ const RightSidebar = ({user,banks,transactions }:RightSidebarProps) => {
                                <BankCard
                                    key={banks[1].$id}
                                    account={banks[1]}
-                                   userName={`${user.firstName} ${user.lastName}`}
+                                   userName={user.name}
                                    showBalance={false}
                                />
                            </div>
