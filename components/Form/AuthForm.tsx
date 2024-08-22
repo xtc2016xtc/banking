@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import CustomInput from "@/components/Header/CustomInput";
 import {logoIcon} from "@/utils";
 import { signIn, signUp} from '@/lib/actions/user.actions'
+import PlaidLink from "@/components/moenty/PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
 
@@ -91,7 +92,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </header>
             {user ? (
                 <div className="flex flex-col gap-4">
-                    {/*<PlaidLink user={user} variant="primary" />*/}
+                    <PlaidLink user={user} variant="primary" />
                 </div>
             ): (
                 <>

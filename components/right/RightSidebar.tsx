@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import {plugin} from "@/utils";
 import BankCard from "@/components/Card/BankCard";
-const RightSidebar = ({user,banks }:RightSidebarProps) => {
+const RightSidebar = ({user,banks,transactions }:RightSidebarProps) => {
     if(!user){
         return null
     }

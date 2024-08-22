@@ -1,7 +1,7 @@
 /*
 * conins icon
 * */
-// export const coninsIcon = '/icons/coins.svg'
+export const coninsIcon = '/icons/auth-image.svg'
 
 /*
 * logo svg
