@@ -36,13 +36,12 @@ const AuthForm = ({ type }: { type: string }) => {
     // 2. Define a submit handler.
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
         setIsLoading(true);
-        console.log(data)
+        // console.log(data)
 
         try {
             if(type === 'sign-up') {
                 const newUser = await signUp(data)
                 setUser(newUser)
-                router.push('/sign-in')
             }
 
             if(type === 'sign-in') {
