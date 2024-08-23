@@ -33,7 +33,7 @@ const Home = async () => {
                     <HeaderBox
                         type="greeting"
                         title={title}
-                        user={loggedIn?.name || '名字获取错误'}
+                        user={loggedIn?.firstName || '名字获取错误'}
                         subtext="银行交易平台"
                     />
 
