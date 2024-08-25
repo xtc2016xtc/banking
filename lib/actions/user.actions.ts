@@ -10,11 +10,7 @@ import { plaidClient } from '@/lib/plaid';
 import { revalidatePath } from "next/cache";
 import { addFundingSource, createDwollaCustomer } from "./dwolla.actions";
 
-const {
-  APPWRITE_DATABASE_ID: DATABASE_ID,
-  APPWRITE_USER_COLLECTION_ID: USER_COLLECTION_ID,
-  APPWRITE_BANK_COLLECTION_ID: BANK_COLLECTION_ID,
-} = process.env;
+const {APPWRITE_DATABASE_ID: DATABASE_ID, APPWRITE_USER_COLLECTION_ID: USER_COLLECTION_ID, APPWRITE_BANK_COLLECTION_ID: BANK_COLLECTION_ID,} = process.env;
 
 export const getUserInfo = async ({ userId }: getUserInfoProps) => {
   try {
@@ -151,14 +147,7 @@ export const createLinkToken = async (user: User) => {
   }
 }
 
-export const createBankAccount = async ({
-                                          userId,
-                                          bankId,
-                                          accountId,
-                                          accessToken,
-                                          fundingSourceUrl,
-                                          shareableId,
-                                        }: createBankAccountProps) => {
+export const createBankAccount = async ({userId, bankId, accountId, accessToken, fundingSourceUrl, shareableId,}: createBankAccountProps) => {
   try {
     const { database } = await createAdminClient();
 
@@ -182,12 +171,9 @@ export const createBankAccount = async ({
   }
 }
 
-export const exchangePublicToken = async ({
-                                            publicToken,
-                                            user,
-                                          }: exchangePublicTokenProps) => {
+export const exchangePublicToken = async ({publicToken, user,}: exchangePublicTokenProps) => {
   try {
-    // Exchange public token for access token and item ID
+    // 获取项目id跟令牌
     const response = await plaidClient.itemPublicTokenExchange({
       public_token: publicToken,
     });
@@ -195,14 +181,14 @@ export const exchangePublicToken = async ({
     const accessToken = response.data.access_token;
     const itemId = response.data.item_id;
 
-    // Get account information from Plaid using the access token
+    // 访问并从 Plaid 获取信息
     const accountsResponse = await plaidClient.accountsGet({
       access_token: accessToken,
     });
 
     const accountData = accountsResponse.data.accounts[0];
 
-    // Create a processor token for Dwolla using the access token and account ID
+    // 访问账户和秘钥 并用Dwolla 创建一个项目id
     const request: ProcessorTokenCreateRequest = {
       access_token: accessToken,
       account_id: accountData.account_id,

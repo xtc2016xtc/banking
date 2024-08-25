@@ -13,7 +13,7 @@ import { Form } from "@/components/ui/form"
 import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import { signIn, signUp } from '@/lib/actions/user.actions';
 import PlaidLink from "@/components/moenty/PlaidLink";
 import CustomInput from "@/components/Header/CustomInput";
 
@@ -116,17 +116,17 @@ const AuthForm = ({ type }: { type: string }) => {
                             {type === 'sign-up' && (
                                 <>
                                     <div className="flex gap-4">
-                                        <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name' />
-                                        <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your first name' />
+                                        <CustomInput control={form.control} name='firstName' label="姓" placeholder='姓' />
+                                        <CustomInput control={form.control} name='lastName' label="名" placeholder='名' />
                                     </div>
-                                    <CustomInput control={form.control} name='address1' label="Address" placeholder='Enter your specific address' />
-                                    <CustomInput control={form.control} name='city' label="City" placeholder='城市' />
+                                    <CustomInput control={form.control} name='address1' label="地址" placeholder='确认地址' />
+                                    <CustomInput control={form.control} name='city' label="城市" placeholder='城市' />
                                     <div className="flex gap-4">
-                                        <CustomInput control={form.control} name='state' label="State" placeholder='Example: NY' />
-                                        <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Example: 11101' />
+                                        <CustomInput control={form.control} name='state' label="城市缩写" placeholder='城市缩写：NY' />
+                                        <CustomInput control={form.control} name='postalCode' label="邮政编码" placeholder='邮政编码：12345' />
                                     </div>
                                     <div className="flex gap-4">
-                                        <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD' />
+                                        <CustomInput control={form.control} name='dateOfBirth' label="出生日期" placeholder='YYYY-MM-DD' />
                                         <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234' />
                                     </div>
                                 </>
@@ -144,7 +144,7 @@ const AuthForm = ({ type }: { type: string }) => {
                                             加载中...
                                         </>
                                     ) : type === 'sign-in'
-                                        ? 'Sign In' : 'Sign Up'}
+                                        ? '登录' : '注册'}
                                 </Button>
                             </div>
                         </form>
