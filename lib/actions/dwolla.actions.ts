@@ -47,7 +47,7 @@ export const createOnDemandAuthorization = async () => {
         const authLink = onDemandAuthorization.body._links;
         return authLink;
     } catch (err) {
-        console.error("没有权限,详细信息: ", err);
+        console.error("Creating an On Demand Authorization Failed: ", err);
     }
 };
 
@@ -59,7 +59,7 @@ export const createDwollaCustomer = async (
             .post("customers", newCustomer)
             .then((res) => res.headers.get("location"));
     } catch (err) {
-        console.error("错误是: ", err);
+        console.error("Creating a Dwolla Customer Failed: ", err);
     }
 };
 

@@ -59,7 +59,7 @@ const RecentTransactions = ({
                         />
 
                         {currentTransactions.length > 0 ? (
-                            <TransactionsTable transactions={currentTransactions} />
+                            <TransactionsTable transactions={transactions} />
                         ) : (
                             <p>没有交易记录。</p>
                         )}

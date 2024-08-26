@@ -1,10 +1,10 @@
-
 import HeaderBox from "@/components/Header/HeaderBox";
 import TotalBalanceBox from "@/components/TotalBalanceBox/TotalBalanceBox";
 import RightSidebar from "@/components/right/RightSidebar";
-import {getLoggedInUser} from "@/lib/actions/user.actions";
-import {getAccount, getAccounts} from "@/lib/actions/bank.actions";
+import { getLoggedInUser } from "@/lib/actions/user.actions";
+import { getAccount, getAccounts } from "@/lib/actions/bank.actions";
 import RecentTransactions from "@/components/Card/RecentTransactions";
+
 // 问候
 function getGreetingBasedOnTime(): string {
     const now = new Date();
@@ -21,22 +21,22 @@ function getGreetingBasedOnTime(): string {
     }
 }
 
-const Home = async ({searchParams: { id, page }}:SearchParamProps) => {
+const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
     const currentPage = Number(page as string) || 1;
     const loggedIn = await getLoggedInUser();
     const title = getGreetingBasedOnTime();
     const accounts = await getAccounts({
         userId: loggedIn.$id
-    })
+    });
 
-    if(!accounts) return;
+    if (!accounts) return null;
 
     const accountsData = accounts?.data;
     const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
-    const account = await getAccount({ appwriteItemId })
-    console.log("account", account)
+    const account = await getAccount({ appwriteItemId });
 
+    console.log("account", account);
 
     return (
         <section className="home">
@@ -67,10 +67,10 @@ const Home = async ({searchParams: { id, page }}:SearchParamProps) => {
             <RightSidebar
                 user={loggedIn}
                 transactions={accounts?.transactions}
-                banks={accountsData?.slice(0,2)}
+                banks={accountsData?.slice(0, 2)}
             />
         </section>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
