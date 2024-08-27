@@ -1,6 +1,8 @@
 const TransactionHistory = () => {
     return (
-        <div>TransactionHistory</div>
+        <div className="transactions">
+            TransactionHistory
+        </div>
     )
 }
 

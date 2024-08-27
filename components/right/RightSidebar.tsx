@@ -9,6 +9,8 @@ import Category from "@/components/right/Category";
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
     const categories: CategoryCount[] = countTransactionCategories(transactions);
 
+    console.log("categories",categories);
+
     return (
         <aside className="right-sidebar">
             <section className="flex flex-col pb-8">
@@ -69,13 +71,17 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                 )}
 
                 <div className="mt-10 flex flex-1 flex-col gap-6">
-                    <h2 className="header-2">账户类型</h2>
+                    <h2 className="header-2">交易分类</h2>
 
-                    <div className='space-y-5'>
-                        {categories.map((category, index) => (
-                            <Category key={category.name} category={category} />
-                        ))}
-                    </div>
+                    {categories.length > 0 ? (
+                        <div className='space-y-5'>
+                            {categories.map((category, index) => (
+                                <Category key={category.name} category={category} />
+                            ))}
+                        </div>
+                    ) : (
+                        <p className="text-gray-600">暂无交易分类。</p>
+                    )}
                 </div>
             </section>
         </aside>
