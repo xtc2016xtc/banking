@@ -10,7 +10,7 @@ import {
 import {formatAmount, getTransactionStatus} from "@/lib/utils";
 
 const TransactionsTable = ({ transactions }: TransactionTableProps) => {
-    console.log('Transactions:', transactions);
+    // console.log('Transactions:', transactions);
     if (!transactions || transactions.length === 0) {
         return <div>没有交易记录。</div>;
     }
