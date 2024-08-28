@@ -14,6 +14,7 @@ export async function createSessionClient() {
   const session = cookies().get("appwrite-session")
 
   if (!session || !session.value) {
+    console.error("无法找到有效的 session，请先登录。");
     throw new Error("No session");
   }
 

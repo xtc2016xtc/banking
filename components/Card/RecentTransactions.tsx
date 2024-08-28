@@ -29,7 +29,7 @@ const RecentTransactions = ({
                     href={`/transaction-history/?id=${appwriteItemId}`}
                     className="view-all-btn"
                 >
-                    更多
+                    详情
                 </Link>
             </header>
 
