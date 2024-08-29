@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {coninsIcon} from "@/utils";
 
 export default function RootLayout({
                                        children,
@@ -11,7 +12,7 @@ export default function RootLayout({
             <div className="auth-asset">
                 <div>
                     <Image
-                        src="/icons/auth-image.svg"
+                        src={coninsIcon}
                         alt="Auth image"
                         width={500}
                         height={500}

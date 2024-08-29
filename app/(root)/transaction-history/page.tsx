@@ -53,7 +53,7 @@ const TransactionHistory = async ({ searchParams: { id, page }}:SearchParamProps
                     </div>
 
                     <div className='transactions-account-balance'>
-                        <p className="text-14">Current balance</p>
+                        <p className="text-14">当前余额</p>
                         <p className="text-24 text-center font-bold">{formatAmount(account?.data.currentBalance)}</p>
                     </div>
                 </div>

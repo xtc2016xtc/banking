@@ -55,7 +55,7 @@ export const BankDropdown = ({
             >
                 <SelectGroup>
                     <SelectLabel className="py-2 font-normal text-gray-500">
-                        Select a bank to display
+                        选择银行账户
                     </SelectLabel>
                     {accounts.map((account: Account) => (
                         <SelectItem
