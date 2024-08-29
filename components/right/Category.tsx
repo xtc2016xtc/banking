@@ -17,6 +17,7 @@ const Category = ({ category }: CategoryProps) => {
     topCategoryStyles.default;
 
 
+
     return (
         <div className={cn("gap-[18px] flex p-4 rounded-xl", bg)}>
             <figure className={cn("flex-center size-10 rounded-full", circleBg)}>
@@ -27,7 +28,7 @@ const Category = ({ category }: CategoryProps) => {
                     <h2 className={cn("font-medium", main)}>{category.name}</h2>
                     <h3 className={cn("font-normal", count)}>{category.count}</h3>
                 </div>
-               {/*@ts-ignore*/}
+                {/*@ts-ignore*/}
                 <Progress value={(category.count / category.totalCount) * 100} className={cn("h-2 w-full", progressBg)}  indicatorClassName={cn("h-2 w-full", indicator)}
                 />
             </div>

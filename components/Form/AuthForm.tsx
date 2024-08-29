@@ -91,15 +91,15 @@ const AuthForm = ({ type }: { type: string }) => {
                 <div className="flex flex-col gap-1 md:gap-3">
                     <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
                         {user
-                            ? 'Link Account'
+                            ? '链接中'
                             : type === 'sign-in'
-                                ? 'Sign In'
-                                : 'Sign Up'
+                                ? '登录'
+                                : '注册'
                         }
                         <p className="text-16 font-normal text-gray-600">
                             {user
-                                ? 'Link your account to get started'
-                                : 'Please enter your details'
+                                ? '链接你的账户'
+                                : '输入账户密码'
                             }
                         </p>
                     </h1>
