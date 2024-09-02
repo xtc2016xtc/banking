@@ -10,10 +10,9 @@
 <details><summary><code>报错信息</code></summary>
 
 ```typescript jsx
-const appwrit = resizeTo("")
-console.log(appwrit)
 
-
+<h1>超级管理员：xtc2016@qq.com</h1>
+<div></div>
 ```
 
 </details>
