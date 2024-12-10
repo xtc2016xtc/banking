@@ -27,7 +27,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
         })
 
         router.push('/');
-    }, [user])
+    }, [router, user])
 
     const config: PlaidLinkOptions = {
         token,
@@ -55,7 +55,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
 
                         height={24}
                     />
-                    <p className='hiddenl text-[16px] font-semibold text-black-2 xl:block'>链接银行</p>
+                    <p className='hidden text-[16px] font-semibold text-black-2 xl:block'>链接银行</p>
                 </Button>
             ): (
                 <Button onClick={() => open()} className="plaidlink-default">

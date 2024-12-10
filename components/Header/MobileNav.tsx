@@ -18,7 +18,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
     const pathname = usePathname();
 
     return (
-        <section className="w-fulll max-w-[264px]">
+        <section className="w-full max-w-[264px]">
             <Sheet>
                 <SheetTrigger>
                     <Image

@@ -64,6 +64,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
     }
 };
 
+
 // Get one bank account
 export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
     try {
@@ -77,9 +78,11 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
         // get account info from plaid
         const accountsResponse = await plaidClient.accountsGet({
             access_token: bank.accessToken,
+            
         });
-
+        
         const accountData = accountsResponse.data.accounts[0];
+      
 
         if (!accountData) {
             throw new Error("Account data not found");
